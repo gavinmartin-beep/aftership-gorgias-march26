@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AfterShip × Gorgias Partner Spiff — Earn $200 Per Referral</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --coral: #FF9780;
+    --black: #1A1E23;
+    --white: #FFFFFF;
+    --gray-50: #F8F8F7;
+    --gray-100: #EFEFED;
+    --gray-300: #C9C9C4;
+    --gray-500: #878782;
+    --gray-700: #4A4A47;
+    --partner: #F97316;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    background: var(--black);
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logos {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .nav-divider {
+    color: #555;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
+  }
+  .gorgias-wordmark { height: 26px; width: auto; filter: brightness(0) invert(1); }
+
+  /* AFTERSHIP LOGO */
+  .aftership-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--black);
+    color: var(--white);
+    padding: 80px 24px 96px;
+    text-align: center;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-sub {
+    font-size: 18px;
+    color: #A8AAB0;
+    max-width: 520px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+  .deadline-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 151, 128, 0.15);
+    border: 1px solid rgba(255, 151, 128, 0.35);
+    color: var(--coral);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+  .deadline-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--coral);
+    display: block;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--coral);
+    color: var(--black);
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1.5px solid #3A3E43;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: #666; background: rgba(255,255,255,0.05); }
+
+  /* SECTIONS */
+  section { padding: 80px 24px; }
+  .section-inner { max-width: 880px; margin: 0 auto; }
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .section-intro {
+    font-size: 17px;
+    color: var(--gray-700);
+    max-width: 620px;
+    line-height: 1.65;
+    margin-bottom: 48px;
+  }
+
+  /* WHY IT WORKS */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+  .why-card {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+  .why-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 18px;
+  }
+  .why-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .why-card p {
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+  .why-card .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 100px;
+    margin-top: 12px;
+    letter-spacing: 0.04em;
+  }
+  .tag-ae { background: #FFF0ED; color: #C44020; }
+  .tag-csm { background: #EEF2FF; color: #3730A3; }
+
+  /* SPIFF DETAILS */
+  .spiff-section { background: var(--gray-50); }
+  .spiff-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  @media (max-width: 600px) {
+    .spiff-grid { grid-template-columns: 1fr; }
+  }
+  .spiff-cell {
+    background: var(--white);
+    padding: 32px 28px;
+    text-align: center;
+  }
+  .spiff-value {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--black);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .spiff-label {
+    font-size: 13px;
+    color: var(--gray-500);
+    font-weight: 500;
+  }
+  .spiff-note {
+    font-size: 12px;
+    color: var(--gray-300);
+    margin-top: 4px;
+  }
+
+  /* IDEAL PROFILE */
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 640px) {
+    .profile-grid { grid-template-columns: 1fr; }
+  }
+  .profile-card {
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+  .profile-card.fits { background: #F0FDF4; border: 1px solid #BBF7D0; }
+  .profile-card.nofits { background: #FFF5F5; border: 1px solid #FECACA; }
+  .profile-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .profile-card.fits h3 { color: #15803D; }
+  .profile-card.nofits h3 { color: #B91C1C; }
+  .profile-list { list-style: none; }
+  .profile-list li {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 6px 0;
+    display: flex;
+    gap: 10px;
+  }
+  .profile-list li .check { flex-shrink: 0; }
+
+  /* EMAIL TEMPLATE */
+  .email-section { background: var(--black); color: var(--white); }
+  .email-section .section-label { color: #666; }
+  .email-section h2 { color: var(--white); }
+  .email-section .section-intro { color: #A8AAB0; }
+  .steps {
+    display: flex;
+    gap: 0;
+    margin-bottom: 48px;
+    position: relative;
+  }
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: #2A2E33;
+  }
+  .step {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .step-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--coral);
+    color: var(--black);
+    font-weight: 800;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+  }
+  .step-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .step-sub { font-size: 12px; color: #666; }
+  @media (max-width: 520px) {
+    .steps { flex-direction: column; gap: 20px; }
+    .steps::before { display: none; }
+    .step { text-align: left; display: flex; align-items: flex-start; gap: 16px; }
+    .step-num { flex-shrink: 0; margin: 0; }
+    .step-body { text-align: left; }
+  }
+  .email-card {
+    background: #0F1217;
+    border: 1px solid #2A2E33;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .email-logo-bar { padding: 14px 24px; border-bottom: 1px solid #2A2E33; }
+  .email-logo-img { height: 20px; filter: brightness(0) invert(1); opacity: 0.85; display: block; }
+  .email-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #2A2E33;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .email-field {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .email-field-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+    width: 50px;
+    flex-shrink: 0;
+    padding-top: 1px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .email-field-value { font-size: 14px; color: #A8AAB0; }
+  .email-field-value .placeholder { color: var(--coral); font-style: italic; }
+  .email-body {
+    padding: 24px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #C8CAD0;
+    white-space: pre-wrap;
+  }
+  .copy-btn {
+    background: var(--coral);
+    color: var(--black);
+    padding: 14px 24px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .copy-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+  .copy-btn.copied { background: #22C55E; color: #fff; }
+  .email-note { margin-top: 16px; font-size: 13px; color: #555; }
+  .email-note strong { color: var(--coral); }
+
+  /* RESOURCES */
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .resource-card {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 0.15s, transform 0.15s;
+  }
+  .resource-card:hover { border-color: var(--coral); transform: translateY(-2px); }
+  .resource-icon { font-size: 24px; margin-bottom: 12px; }
+  .resource-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .resource-card p { font-size: 13px; color: var(--gray-500); }
+
+  /* FOOTER CTA */
+  .footer-cta {
+    background: var(--coral);
+    color: var(--black);
+    text-align: center;
+    padding: 80px 24px;
+  }
+  .footer-cta h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .footer-cta p { font-size: 17px; opacity: 0.7; margin-bottom: 36px; }
+  .btn-dark {
+    background: var(--black);
+    color: var(--white);
+    padding: 16px 32px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .btn-dark:hover { opacity: 0.85; transform: translateY(-1px); }
+
+  footer {
+    background: var(--black);
+    color: #555;
+    text-align: center;
+    padding: 24px;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logos">
+    <!-- Gorgias logo -->
+    <img src="../gorgias-logo.png" alt="Gorgias" class="gorgias-wordmark">
+
+    <span class="nav-divider">×</span>
+
+    <!-- AfterShip logo -->
+    <div class="aftership-logo">
+      <!-- 3D box icon -->
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="28" height="28" rx="6" fill="#F97316"/>
+        <!-- Box top face -->
+        <polygon points="14,5 22,9 14,13 6,9" fill="white" opacity="0.95"/>
+        <!-- Box left face -->
+        <polygon points="6,9 14,13 14,22 6,18" fill="white" opacity="0.6"/>
+        <!-- Box right face -->
+        <polygon points="22,9 14,13 14,22 22,18" fill="white" opacity="0.8"/>
+        <!-- Center seam -->
+        <line x1="14" y1="5" x2="14" y2="13" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+        <line x1="6" y1="9" x2="22" y2="9" stroke="#F97316" stroke-width="0.5" opacity="0.3"/>
+      </svg>
+      <svg width="78" height="18" viewBox="0 0 78 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="14" font-family="'Inter Tight', sans-serif" font-weight="700" font-size="14" fill="white" letter-spacing="-0.3">aftership</text>
+      </svg>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="eyebrow">AfterShip × Gorgias Partner Spiff</span>
+  <h1>Earn $200 for every qualified referral</h1>
+  <p class="hero-sub">MM/ENT ecommerce brands, $5M+ GMV — payout triggers when a demo is booked, not when it closes.</p>
+  <div class="deadline-badge">March 2026 only</div>
+  <div class="hero-ctas">
+    <a href="#email-template" class="btn-primary">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M1 5.5l7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      See Email Template
+    </a>
+    <a href="#spiff-details" class="btn-outline">Spiff Details</a>
+  </div>
+</section>
+
+<!-- WHY IT WORKS -->
+<section id="why">
+  <div class="section-inner">
+    <p class="section-label">The pitch</p>
+    <h2>Why AfterShip + Gorgias is an easy intro</h2>
+    <p class="section-intro">AfterShip brands fielding WISMO tickets are a natural fit for Gorgias AI Agent. Here's how to frame it.</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-icon">📦</div>
+        <h3>WISMO tickets = support ceiling</h3>
+        <p>Brands using AfterShip get proactive tracking — but "where is my order?" still floods inboxes. Gorgias AI Agent handles those automatically, deflecting tickets before agents ever see them.</p>
+        <span class="tag tag-ae">AE: bigger deal</span>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🔗</div>
+        <h3>Post-purchase is already the priority</h3>
+        <p>If a brand invested in AfterShip, they care about the post-purchase experience. A CX platform that closes the loop on support is the next natural buy.</p>
+        <span class="tag tag-csm">CSM: deeper relationship</span>
+      </div>
+      <div class="why-card">
+        <div class="why-card-icon">🤖</div>
+        <h3>AI deflection compounds the value</h3>
+        <p>AfterShip reduces tracking anxiety. Gorgias AI handles the tickets that still come in. Together they keep customers informed and support lean — that's a story that sells itself.</p>
+        <span class="tag tag-ae">AE: bigger deal</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPIFF DETAILS -->
+<section class="spiff-section" id="spiff-details">
+  <div class="section-inner">
+    <p class="section-label">The numbers</p>
+    <h2>Spiff details</h2>
+    <p class="section-intro">Simple, no gotchas. You refer, they demo, you get paid.</p>
+
+    <div class="spiff-grid">
+      <div class="spiff-cell">
+        <div class="spiff-value">$200</div>
+        <div class="spiff-label">Per qualified referral</div>
+        <div class="spiff-note">No cap on earnings</div>
+      </div>
+      <div class="spiff-cell">
+        <div class="spiff-value">Demo</div>
+        <div class="spiff-label">Payout trigger</div>
+        <div class="spiff-note">Booked, not closed-won</div>
+      </div>
+      <div class="spiff-cell">
+        <div class="spiff-value">$5M+</div>
+        <div class="spiff-label">GMV minimum</div>
+        <div class="spiff-note">MM/ENT ecommerce brands</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px; padding: 20px 24px; background: white; border: 1px solid var(--gray-100); border-radius: var(--radius); display: flex; align-items: center; gap: 12px;">
+      <span style="font-size: 20px;">📅</span>
+      <div>
+        <div style="font-size: 14px; font-weight: 700;">Must be submitted in March 2026</div>
+        <div style="font-size: 13px; color: var(--gray-500);">Referrals submitted outside this window are not eligible for the spiff.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDEAL PROFILE -->
+<section id="ideal-profile">
+  <div class="section-inner">
+    <p class="section-label">Who to refer</p>
+    <h2>Ideal referral profile</h2>
+    <p class="section-intro">Think about your book of business — which accounts fit this profile?</p>
+
+    <div class="profile-grid">
+      <div class="profile-card fits">
+        <h3>✓ Good fit</h3>
+        <ul class="profile-list">
+          <li><span class="check" style="color:#16A34A">✓</span> $5M+ GMV ecommerce brand</li>
+          <li><span class="check" style="color:#16A34A">✓</span> Growing support volume or scaling CX team</li>
+          <li><span class="check" style="color:#16A34A">✓</span> High WISMO ticket volume</li>
+          <li><span class="check" style="color:#16A34A">✓</span> Manual ticket triage or low automation</li>
+          <li><span class="check" style="color:#16A34A">✓</span> Low CSAT or signs of agent burnout</li>
+          <li><span class="check" style="color:#16A34A">✓</span> DTC or omni-channel retail</li>
+        </ul>
+      </div>
+      <div class="profile-card nofits">
+        <h3>✗ Not a fit</h3>
+        <ul class="profile-list">
+          <li><span class="check" style="color:#DC2626">✗</span> Under $1M GMV</li>
+          <li><span class="check" style="color:#DC2626">✗</span> Pure B2B, no ecommerce component</li>
+          <li><span class="check" style="color:#DC2626">✗</span> No customer support function</li>
+          <li><span class="check" style="color:#DC2626">✗</span> Already contracted with Gorgias</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL TEMPLATE -->
+<section class="email-section" id="email-template">
+  <div class="section-inner">
+    <p class="section-label">How to refer</p>
+    <h2>Send this intro email</h2>
+    <p class="section-intro">Three steps. One email. $200 in your pocket when they book a demo.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Qualify</div>
+          <div class="step-sub">$5M+ GMV, active support team</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Send intro</div>
+          <div class="step-sub">Copy template below, CC Gorgias</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Get paid</div>
+          <div class="step-sub">$200 when demo is booked</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="email-card" id="email-content">
+      <div class="email-logo-bar">
+        <img src="../gorgias-logo.png" alt="Gorgias" class="email-logo-img">
+      </div>
+      <div class="email-header">
+        <div class="email-field">
+          <span class="email-field-label">To</span>
+          <span class="email-field-value">[Prospect name &lt;prospect@brand.com&gt;]</span>
+        </div>
+        <div class="email-field">
+          <span class="email-field-label">CC</span>
+          <span class="email-field-value">Sarah Kang &lt;sarah.kang@gorgias.com&gt;</span>
+        </div>
+        <div class="email-field" style="width:100%">
+          <span class="email-field-label">Subject</span>
+          <span class="email-field-value">Quick intro: [Brand name] ↔ Gorgias</span>
+        </div>
+      </div>
+      <div class="email-body" id="email-body-text">Hey [Prospect First Name],
+
+As your shipment volume continues to grow, we're seeing more brands in your position look at how to better automate the support that comes with it. That's where Gorgias has been a strong complement to AfterShip.
+
+Looping in [Gorgias Contact Name] from Gorgias here. They partner with a lot of AfterShip merchants to automate WISMO and returns related tickets that tracking updates and return portals do not fully resolve, helping teams scale without adding headcount.
+
+Their AI Agent can fully handle a meaningful share of tracking and returns conversations end to end, which has been a big operational unlock for fast growing ecommerce brands.
+
+I'll leave you two to connect. Let me know how I can support.
+
+[Your Name]</div>
+    </div>
+
+    <button class="copy-btn" id="copy-btn" onclick="copyEmailTemplate()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="4" y="4" width="9" height="11" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 11H2.5A1.5 1.5 0 011 9.5v-7A1.5 1.5 0 012.5 1h7A1.5 1.5 0 0111 2.5V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Copy email template
+    </button>
+
+    <p class="email-note">Demo booked = <strong>$200 in your pocket.</strong> Remember to CC the Gorgias contact before sending.</p>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section id="resources">
+  <div class="section-inner">
+    <p class="section-label">Get in touch</p>
+    <h2>Get in touch</h2>
+    <p class="section-intro">Reach out to the Gorgias team directly — we're here to help you close.</p>
+
+    <div class="resources-grid">
+      <div class="resource-card" style="cursor:default">
+        <div class="resource-icon">💬</div>
+        <h3>Slack channel</h3>
+        <p>#aftership-gorgias-partners — ask questions, flag opps, get fast answers from the Gorgias team</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta">
+  <div class="section-inner">
+    <h2>March deadline. Don't leave $200 on the table.</h2>
+    <p>Qualified referrals submitted in March 2026 only. No cap on how many you can submit.</p>
+    <button class="btn-dark" onclick="copyEmailTemplate()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="4" y="4" width="9" height="11" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 11H2.5A1.5 1.5 0 011 9.5v-7A1.5 1.5 0 012.5 1h7A1.5 1.5 0 0111 2.5V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Copy email template
+    </button>
+  </div>
+</section>
+
+<footer>
+  Gorgias Partner Spiff · March 2026 · For AfterShip AEs and CSMs only
+</footer>
+
+<script>
+function copyEmailTemplate() {
+  const subject = "Quick intro: [Brand name] ↔ Gorgias";
+  const body = `Hey [Prospect First Name],
+
+As your shipment volume continues to grow, we're seeing more brands in your position look at how to better automate the support that comes with it. That's where Gorgias has been a strong complement to AfterShip.
+
+Looping in [Gorgias Contact Name] from Gorgias here. They partner with a lot of AfterShip merchants to automate WISMO and returns related tickets that tracking updates and return portals do not fully resolve, helping teams scale without adding headcount.
+
+Their AI Agent can fully handle a meaningful share of tracking and returns conversations end to end, which has been a big operational unlock for fast growing ecommerce brands.
+
+I'll leave you two to connect. Let me know how I can support.
+
+[Your Name]`;
+
+  const fullText = `To: [Prospect name <prospect@brand.com>]
+CC: Sarah Kang <sarah.kang@gorgias.com>
+Subject: ${subject}
+
+${body}`;
+
+  navigator.clipboard.writeText(fullText).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.classList.add('copied');
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l4 4 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Copied!`;
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="4" y="4" width="9" height="11" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 11H2.5A1.5 1.5 0 011 9.5v-7A1.5 1.5 0 012.5 1h7A1.5 1.5 0 0111 2.5V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Copy email template`;
+    }, 2500);
+  }).catch(() => {
+    const el = document.createElement('textarea');
+    el.value = fullText;
+    el.style.position = 'fixed';
+    el.style.opacity = '0';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    const btn = document.getElementById('copy-btn');
+    btn.classList.add('copied');
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.textContent = 'Copy email template';
+    }, 2500);
+  });
+}
+</script>
+
+</body>
+</html>
